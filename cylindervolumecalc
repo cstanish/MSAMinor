@@ -18,3 +18,31 @@ def get_float_value(prompt):
 
 cylander_height = get_float_value("What is the height of your cylander: ")
 cylander_radius = get_float_value("What is the radius of your cylander: ")
+
+
+
+def get_float_value(prompt):
+    run_again = True
+    while (run_again):
+        try:
+            user_input = float(input(prompt))
+            if(user_input <= 0):
+                print("ERROR: Value must be greater than 0.\n")
+                continue
+        except:
+            print("ERROR: Input must be a number.\n")
+        else:
+            run_again = False
+    
+    return user_input
+#get radius from user
+cylinder_radius = get_float_value("enter the radius of the cylinder in cm:\n")
+
+#get height from user
+cylinder_height = get_float_value("enter the height of the cylinder in cm:\n")
+
+#cylinder radius * 3.14 * height = total
+total = cylinder_height*cylinder_radius*cylinder_radius*3.14
+print(f"\ncylinder volume is: {total}")
+
+
