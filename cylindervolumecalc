@@ -1,0 +1,20 @@
+#Ask for a valid user input
+import math
+
+def get_float_value(prompt):
+    run_again = True
+    while (run_again):
+        try:
+            user_input = float(input(prompt))
+            if(user_input <= 0):
+                print("ERROR: Value must be greater than 0.\n")
+                continue
+        except:
+            print("ERROR: Input must be a number.\n")
+        else:
+            run_again = False
+    
+    return user_input
+
+cylander_height = get_float_value("What is the height of your cylander: ")
+cylander_radius = get_float_value("What is the radius of your cylander: ")
