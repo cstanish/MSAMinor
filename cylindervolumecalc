@@ -1,5 +1,6 @@
 #Define Functions
 import math
+import string
 
 def get_float_value(prompt):
     run_again = True
@@ -16,21 +17,28 @@ def get_float_value(prompt):
     
     return user_input
 
-
-cy_height = get_float_value("What is the height of your cylander: ")
-cy_radius = get_float_value("What is the radius of your cylander: ")
-
-#Calculate
-cy
-
-
-
-do_again = input("Would you like to perfom another calculation (y/n)?")
+def cy_calc (prompt):
+    calculate = True
+    while calculate == True:
+        cy_height = get_float_value("What is the height of your cylander: ")
+        cy_radius = get_float_value("What is the radius of your cylander: ")
+        cy_volume = math.pi * (cy_radius * cy_radius) * cy_height
+        print(f"Volume of your Cylinder: {cy_volume:.2f}")
+        
+        
+           
+           
+           do_again = string(input(prompt))
+            do_again = input("Would you like to perfom another calculation (y/n)?")
+        except:
 if do_again == "n'":
     print ("Bye!")
-    run_quest = False
+    calculate = False
 if do_again == "y":
     print ("Sounds good!")
+    calculate = True
+
+
    
 
 
