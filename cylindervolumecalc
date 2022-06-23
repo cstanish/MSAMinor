@@ -43,6 +43,7 @@ if do_again == "y":
 
 
 #SAMS STUFF
+import math
 def get_float_value(prompt):
     run_again = True
     while (run_again):
@@ -57,14 +58,22 @@ def get_float_value(prompt):
             run_again = False
     
     return user_input
-#get radius from user
-cylinder_radius = get_float_value("enter the radius of the cylinder in cm:\n")
 
-#get height from user
-cylinder_height = get_float_value("enter the height of the cylinder in cm:\n")
+run_again = True
+while run_again:
+    #get radius from user
+    cylinder_radius = get_float_value("enter the radius of the cylinder in cm:\n")
+    #get height from user
+    cylinder_height = get_float_value("enter the height of the cylinder in cm:\n")
+    #cylinder radius * 3.14 * height = total
+    total = cylinder_height*cylinder_radius*cylinder_radius*math.pi
+    print(f"\ncylinder volume is: {total}")
 
-#cylinder radius * 3.14 * height = total
-total = cylinder_height*cylinder_radius*cylinder_radius*3.14
-print(f"\ncylinder volume is: {total}")
+    #calculate again
+    do_again = input("would you like to do another calculation (y/n)")
+    if do_again == "n":
+            run_again = False
+            print("goodbye!")
+
 
 
