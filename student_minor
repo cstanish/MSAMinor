@@ -18,12 +18,22 @@ while True:
 #if user chose 1, ask for user name and password and 
 if user_option == "1":
     while True:
-        user_name = input("Please enter your user name ")
-        user_pass = input("Please enter your password ")
+        user_name = input("Please enter your user name: ")
+        user_pass = input("Please enter your password: ")
         #open the user's file
         user_file = open("users.txt", "r")
+        user_found = False
         for line in user_file:
-            print(line)
+            credentials = line.split(", ")
+            if user_name == credentials[0] and user_pass == credentials[1]:
+                user_found = True
+                break
+
+            if user_found:
+                print(f"User {user_name} successfully logged in wahoo\n")
+                break
+            else: 
+                print(f"User {user_name} not found you lying rat\n")
 #- validate username and password combination in the user.txt file
 #-if not valid combination reprompt the user
 #- if valid then move on to prompt for student data
