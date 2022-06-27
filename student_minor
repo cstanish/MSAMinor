@@ -62,11 +62,7 @@ elif user_option == "2":
 student_names = []
 student_scores = []
 student_grade = []
-#for num in range(student_number):
-    #student_name = input("what's the name of the student?")
-    #student_name.append(student_name)
-    #student_score = input("what's the student score?")
-    #student_score.append(student_score)
+
 
 #ask user how many students to enter data
 number_of_students = int(input("Enter the number of students to enter grades for:"))
@@ -86,15 +82,15 @@ for counter in range(number_of_students):
         student_grade.append("A")
     elif (student_score >= 80):
         student_grade.append("B")
-    elif(student_grade >= 70):
+    elif(student_score >= 70):
         student_grade.append("C")
-    elif (student_grade >= 60):
+    elif (student_score >= 60):
         student_grade.append("D")
-    elif (student_grade < 60):
+    else:
         student_grade.append("F")
 
-
-
-
 #print sutdent data(name,score,grade)
+for index in range(len(student_names)):
+    print(f"{student_names[index]} : {student_scores[index]} : {student_grade[index]}")
+
 #calculate and print class average
