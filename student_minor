@@ -93,4 +93,10 @@ for counter in range(number_of_students):
 for index in range(len(student_names)):
     print(f"{student_names[index]} : {student_scores[index]} : {student_grade[index]}")
 
+total = 0
+for score in  student_scores:
+    total = total + score
+
+average = total / len(student_scores)
+
 #calculate and print class average
