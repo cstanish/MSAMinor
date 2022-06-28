@@ -98,5 +98,7 @@ for score in  student_scores:
     total = total + score
 
 average = total / len(student_scores)
+print(f"Here is your class average \n {average}")
 
 #calculate and print class average
+
